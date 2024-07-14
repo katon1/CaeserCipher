@@ -19,7 +19,6 @@ def caesershift(message, shift):
             if converted < FIRST_CHAR_CODE:
                 converted += CHAR_RANGE
 
-
             shifted = chr (converted)
             # Turned the ceasershifted into a string 
             result += shifted
@@ -31,27 +30,28 @@ def caesershift(message, shift):
 
 # Program to run CaeserCipher
 program_run = True
+Message = ""
 
 while program_run:
 
-    User_type = int(input("Welcome to Ceasercipher: Would you like to Encrypt (1), Decrypt? (2) or Quit (3) "))
+    User_type = int(input("\nWelcome to Ceasercipher: Would you like to Encrypt (1), Decrypt? (2) or Quit (3) "))
 
     if User_type == 1:
 
-        User_message = input("Message To Encrypt: ")
+        User_message = input("\nMessage To Encrypt: ")
 
-        User_shift = int(input("Key Shift: "))
-
+        User_shift = int(input("\nKey Shift: "))
+        print("\nEncrypted text: ")
         caesershift(User_message, User_shift)
 
     elif  User_type == 2: 
 
-        User_message = input("Message To Decrypt: ")
+        User_message = input("\nMessage To Decrypt: ")
 
-        User_shift = int(input("Key Shift: "))
-
+        User_shift = int(input("\nKey Shift: "))
+        print("\nDecrypted text: ")
         caesershift(User_message, -User_shift)
 
     else:
-        print("Thank you, Come Again")
+        print("\nThank you, Come Again")
         program_run = False
